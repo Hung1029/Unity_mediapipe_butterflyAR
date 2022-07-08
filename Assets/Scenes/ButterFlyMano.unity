@@ -174,9 +174,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -5692886136323441272, guid: 9b70401a623d20245a0f98a018fcadfe, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -3961951023652217126, guid: 9b70401a623d20245a0f98a018fcadfe, type: 3}
+      propertyPath: m_CastShadows
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -1307540691723255689, guid: 9b70401a623d20245a0f98a018fcadfe, type: 3}
+      propertyPath: m_CastShadows
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 9b70401a623d20245a0f98a018fcadfe, type: 3}
       propertyPath: m_Name
       value: butterfly
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9b70401a623d20245a0f98a018fcadfe, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9b70401a623d20245a0f98a018fcadfe, type: 3}
@@ -209,7 +225,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4b92c82805e64bbdbd090cfe190b6fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fingerInfoGizmo: {fileID: 0}
 --- !u!95 &149666582
 Animator:
   serializedVersion: 4
@@ -669,7 +684,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3380657200633960680, guid: d51db39ed46eb16419119819e79cc835, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3420502752820057420, guid: d51db39ed46eb16419119819e79cc835, type: 3}
       propertyPath: m_Enabled
