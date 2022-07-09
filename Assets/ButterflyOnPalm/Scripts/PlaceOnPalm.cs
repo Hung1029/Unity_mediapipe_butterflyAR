@@ -11,6 +11,8 @@ public class PlaceOnPalm : MonoBehaviour
     public Text ButterFlyShow;
     public Text HandState;
 
+   
+
     private void Start()
     {
         ButterFlyPos.text = "INIT";
@@ -21,30 +23,32 @@ public class PlaceOnPalm : MonoBehaviour
         {
             mr.enabled = true;
         }
+
+        Screen.orientation = ScreenOrientation.Portrait;
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (ARSession.state == ARSessionState.SessionTracking)
-        {
-            FollowPalmCenter();
-        }
+        
+        FollowPalmCenter();   
+
     }
 
     private void FollowPalmCenter()
     {
         MeshRenderer[] meshRenderers = GetComponentsInChildren<MeshRenderer>();
         HandInfo currentlyDetectedHand = ManomotionManager.Instance.Hand_infos[0].hand_info;
-        ManoGestureContinuous currentlyDetectedContinousGesture = currentlyDetectedHand.gesture_info.mano_gesture_continuous;
-
+     
         Vector3 pinchPos = currentlyDetectedHand.tracking_info.palm_center;
-        HandState.text = "HAND"+ pinchPos.ToString();
-
-        if (currentlyDetectedContinousGesture == ManoGestureContinuous.OPEN_HAND_GESTURE)
+       // HandState.text = "HAND"+ currentlyDetectedHand.gesture_info.mano_class + pinchPos.ToString();
+        
+        if (ManomotionManager.Instance.Hand_infos[0].hand_info.gesture_info.mano_class != ManoClass.NO_HAND)
         {
-            HandState.text = "OPENHAND " + pinchPos.ToString();
+
             Vector3 newPos = ManoUtils.Instance.CalculateNewPosition(pinchPos, currentlyDetectedHand.tracking_info.depth_estimation);
+            HandState.text = "pinchPos" + pinchPos.ToString();
             if (!showButterfly)
             {
                 foreach (var mr in meshRenderers)
